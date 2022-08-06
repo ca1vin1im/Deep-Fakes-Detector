@@ -77,13 +77,13 @@ The TMC dataset is also available for research purpose upon request via [*tmc-da
 ### Data Dictionary
 
 **CSV Files**:
-- **`_train.csv_`**: Initial csv file with new data labels and file sizes included. New data labels and file sizes were not provided by AI Singapore.
-- **`_train_data.csv_`**: csv file for the TMC dataset of 6,943 real and fake videos with additional information included. 
-- **`_train_subset.csv_`**: csv file for the initial subset of 2,080 real and fake videos from the TMC dataset.
-- **`_train_faces_subset.csv_`**: csv file for the final subset of 1,560 real and fake videos from the TMC dataset.
-- **`_testerTMC.csv_`**: csv file for the 12 **NEW** videos that was used in the TMC Sample Test to ascertain the robustness of the trained model.
+- **_`train.csv`_**: Initial csv file with new data labels and file sizes included. New data labels and file sizes were not provided by AI Singapore.
+- **_`train_data.csv`_**: csv file for the TMC dataset of 6,943 real and fake videos with additional information included. 
+- **_`train_subset.csv`_**: csv file for the initial subset of 2,080 real and fake videos from the TMC dataset.
+- **_`train_faces_subset.csv`_**: csv file for the final subset of 1,560 real and fake videos from the TMC dataset.
+- **_`testerTMC.csv`_**: csv file for the 12 **NEW** videos that was used in the TMC Sample Test to ascertain the robustness of the trained model.
 
-Data dictionary for **`_train.csv_`** (last 4 features are not applicable), **`_train_data.csv_`**, **`_train_subset.csv_`**, **`_train_faces_subset.csv_`**, and **`_testerTMC.csv_`**:
+Data dictionary for **_`train.csv`_** (last 4 features are not applicable), **_`train_data.csv`_**, **_`train_subset.csv`_**, **_`train_faces_subset.csv`_**, and **_`testerTMC.csv`_**:
 
 | **Feature**   | **Type** | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |---------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -139,12 +139,12 @@ We will perform the following steps for data preprocessing, [*Exploratory Data A
 
 **Data Preprocessing**
 
-`[ Notebook: **A -- Relabel & Convert Each Video To Images** ]`
+**`[ Notebook: A -- Relabel & Convert Each Video To Images ]`**
 
 1. Relabel all 6,943 videos' filenames
 2. Capture frames from each video in PNG format & scale all images to 1080 pixels
 
-`[ Notebook: **B -- Obtain Videos Parameters & Move Video Subset** ]`
+**`[ Notebook: B -- Obtain Videos Parameters & Move Video Subset ]`**
 
 3. Obtain additional videos' parameters [**_Optional_**]
     - frame count
@@ -153,16 +153,16 @@ We will perform the following steps for data preprocessing, [*Exploratory Data A
     - number of images that will be extracted per video (_derived_)
 4. Move all 2,080 initial subset of videos to new folder [**_Optional_**]
 
-`[ Notebook: **C -- Crop Faces With MTCNN** ]`
+**`[ Notebook: C -- Crop Faces With MTCNN ]`**
 
 5. Detect, crop & save faces to subfolder
 
-`[ Notebook: **D -- Train-Test Split** ]`
+**`[ Notebook: D -- Train-Test Split ]`**
 
 6. Prepare Train, Validation & Test Folders
     - Upload zipped file of split dataset "**_split_dataset.zip_**" to [*Kaggle*](https://www.kaggle.com/) as private dataset
 
-`[ Notebook: **E -- Exploratory Data Analysis (EDA)** ]`
+**`[ Notebook: E -- Exploratory Data Analysis (EDA) ]`**
 
 7. Exploratory Data Analysis (EDA)
     - Compare Mean Real Image & Mean Fake Image
@@ -170,7 +170,7 @@ We will perform the following steps for data preprocessing, [*Exploratory Data A
     - Compare Standard Deviation Real Image & Standard Deviation Fake Image
     - Compare contrast between Standard Deviation Images
 
-`[ Notebook: **F -- Train Model** ]` (_This Notebook runs in **Google Colab** instead_)
+**`[ Notebook: F -- Train Model ]`** (_This Notebook runs in **Google Colab** instead_)
 
 8. Train the chosen CNN classifier model
     - Mount Google Drive
