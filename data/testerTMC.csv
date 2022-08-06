@@ -1,0 +1,13 @@
+filename,srcDataSource,trgDataSource,videoType,new_label,label,size,frame_count,fps,duration,images
+386b9e08d7f2baf4.mp4,professional,professional,Type-1,1,pp1,3071,334,24,13.92,14
+3b045995aee69601.mp4,professional,professional,Type-2,1,pp2,3548,387,24,16.12,17
+2b75c32db16fd112.mp4,amateur,professional,Type-1,1,ap1,1141,432,24,18,18
+3cf7dc576bc5c773.mp4,amateur,professional,Type-2,1,ap2,4354,437,24,18.21,19
+f2a32312e90bdb9d.mp4,professional,amateur,Type-2,1,pa2,2555,1384,30,46.13,47
+9c9754660b39bd4e.mp4,amateur,amateur,Type-1,1,aa1,17483,1131,24,47.12,48
+f695fdd7195d63a4.mp4,professional,amateur,Type-1,1,pa1,38230,1413,30,47.1,48
+1f63ea36842197f2.mp4,amateur,amateur,Type-2,1,aa2,25498,1107,24,46.12,47
+f881a09999673fea.mp4,amateur,,,0,a00,15193,1177,24,49.04,50
+29116697ff731c87.mp4,amateur,,,0,a00,19901,1472,30,49.07,50
+5eb14fcfd504b113.mp4,professional,,,0,p00,3259,482,24,20.08,21
+a6df146d47b81cf3.mp4,professional,,,0,p00,3382,481,24,20.04,21
