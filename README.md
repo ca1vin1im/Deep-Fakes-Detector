@@ -77,13 +77,13 @@ The TMC dataset is also available for research purpose upon request via [*tmc-da
 ### Data Dictionary
 
 **CSV Files**:
-- **_train.csv_**: Initial csv file with new data labels and file sizes included. New data labels and file sizes were not provided by AI Singapore.
-- **_train_data.csv_**: csv file for the TMC dataset of 6,943 real and fake videos with additional information included. 
-- **_train_subset.csv_**: csv file for the initial subset of 2,080 real and fake videos from the TMC dataset.
-- **_train_faces_subset.csv_**: csv file for the final subset of 1,560 real and fake videos from the TMC dataset.
-- **_testerTMC.csv_**: csv file for the 12 **NEW** videos that was used in the TMC Sample Test to ascertain the robustness of the trained model.
+- **`_train.csv_`**: Initial csv file with new data labels and file sizes included. New data labels and file sizes were not provided by AI Singapore.
+- **`_train_data.csv_`**: csv file for the TMC dataset of 6,943 real and fake videos with additional information included. 
+- **`_train_subset.csv_`**: csv file for the initial subset of 2,080 real and fake videos from the TMC dataset.
+- **`_train_faces_subset.csv_`**: csv file for the final subset of 1,560 real and fake videos from the TMC dataset.
+- **`_testerTMC.csv_`**: csv file for the 12 **NEW** videos that was used in the TMC Sample Test to ascertain the robustness of the trained model.
 
-Data dictionary for **_train.csv_** (last 4 features are not applicable), **_train_data.csv_**, **_train_subset.csv_**, **_train_faces_subset.csv_**, and **_testerTMC.csv_**:
+Data dictionary for **`_train.csv_`** (last 4 features are not applicable), **`_train_data.csv_`**, **`_train_subset.csv_`**, **`_train_faces_subset.csv_`**, and **`_testerTMC.csv_`**:
 
 | **Feature**   | **Type** | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |---------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -139,58 +139,58 @@ We will perform the following steps for data preprocessing, [*Exploratory Data A
 
 **Data Preprocessing**
 
-[ Notebook: **A -- Relabel & Convert Each Video To Images** ]
+`[ Notebook: **A -- Relabel & Convert Each Video To Images** ]`
 
 1. Relabel all 6,943 videos' filenames
 2. Capture frames from each video in PNG format & scale all images to 1080 pixels
 
-[ Notebook: **B -- Obtain Videos Parameters & Move Video Subset** ]
+`[ Notebook: **B -- Obtain Videos Parameters & Move Video Subset** ]`
 
 3. Obtain additional videos' parameters [**_Optional_**]
- - frame count
- - fps
- - duration (_derived_)
- - number of images that will be extracted per video (_derived_)
+    - frame count
+    - fps
+    - duration (_derived_)
+    - number of images that will be extracted per video (_derived_)
 4. Move all 2,080 initial subset of videos to new folder [**_Optional_**]
 
-[ Notebook: **C -- Crop Faces With MTCNN** ]
+`[ Notebook: **C -- Crop Faces With MTCNN** ]`
 
 5. Detect, crop & save faces to subfolder
 
-[ Notebook: **D -- Train-Test Split** ]
+`[ Notebook: **D -- Train-Test Split** ]`
 
 6. Prepare Train, Validation & Test Folders
- - Upload zipped file of split dataset "**_split_dataset.zip_**" to [*Kaggle*](https://www.kaggle.com/) as private dataset
+    - Upload zipped file of split dataset "**_split_dataset.zip_**" to [*Kaggle*](https://www.kaggle.com/) as private dataset
 
-[ Notebook: **E -- Exploratory Data Analysis (EDA)** ]
+`[ Notebook: **E -- Exploratory Data Analysis (EDA)** ]`
 
 7. Exploratory Data Analysis (EDA)
- - Compare Mean Real Image & Mean Fake Image
- - Compare contrast between Mean Images
- - Compare Standard Deviation Real Image & Standard Deviation Fake Image
- - Compare contrast between Standard Deviation Images
+    - Compare Mean Real Image & Mean Fake Image
+    - Compare contrast between Mean Images
+    - Compare Standard Deviation Real Image & Standard Deviation Fake Image
+    - Compare contrast between Standard Deviation Images
 
-[ Notebook: **F -- Train Model** ] (_This Notebook runs in **Google Colab** instead_)
+`[ Notebook: **F -- Train Model** ]` (_This Notebook runs in **Google Colab** instead_)
 
 8. Train the chosen CNN classifier model
- - Mount Google Drive
- - Install and/or import required libraries / packages
- - Download and unzip private split dataset from [*Kaggle*](https://www.kaggle.com/)
- - Set global random seed, directories, batch size, image size
- - Prepare train, validation and test datasets, including rescaling as appropriate according to choice of CNN classifier model
- - Apply image augmentations on train dataset
- - Load CNN classifier model pretrained on [*ImageNet*](https://image-net.org/)
- - Add additional layers to CNN classifier model as appropriate and compile final model
- - Set up early stopping, reduce learning rate on plateau, and save best model at checkpoint
- - Initial training of model
- - Plot Learning Curves
- - Recompile model with reduced learning rate
- - Fine tuning training of model
- - Plot Combined Learning Curves
- - Load best model's saved weights values, architecture, training configuration, optimizer and its state
- - Generate predictions with best model
- - Generate corresponding Confusion Matrix, Receiver Operating Characteristic (ROC) and Classification Report
- - Apply Best Model to predict faces extracted from 12 new TMC dataset videos
+    - Mount Google Drive
+    - Install and/or import required libraries / packages
+    - Download and unzip private split dataset from [*Kaggle*](https://www.kaggle.com/)
+    - Set global random seed, directories, batch size, image size
+    - Prepare train, validation and test datasets, including rescaling as appropriate according to choice of CNN classifier model
+    - Apply image augmentations on train dataset
+    - Load CNN classifier model pretrained on [*ImageNet*](https://image-net.org/)
+    - Add additional layers to CNN classifier model as appropriate and compile final model
+    - Set up early stopping, reduce learning rate on plateau, and save best model at checkpoint
+    - Initial training of model
+    - Plot Learning Curves
+    - Recompile model with reduced learning rate
+    - Fine tuning training of model
+    - Plot Combined Learning Curves
+    - Load best model's saved weights values, architecture, training configuration, optimizer and its state
+    - Generate predictions with best model
+    - Generate corresponding Confusion Matrix, Receiver Operating Characteristic (ROC) and Classification Report
+    - Apply Best Model to predict faces extracted from 12 new TMC dataset videos
 9. Limitations, Future Work, Recommendations, and Conclusion
 
 ---
@@ -212,7 +212,7 @@ One of the Exploratory Data Analyses (EDA) done were plots of the Average Real, 
 
 ![EfficientNet-B7](media/EfficientNet-B7.png)
 
-The CNN model used in this project is the EfficientNet-B7 because it significantly outperforms other CNNs to achieve new state-of-the-art 84.3% top-1 accuracy while being 8.4x smaller and 6.1x faster than GPipe. ([*Source*](https://arxiv.org/pdf/1905.11946.pdf))
+The CNN model used in this project is the **EfficientNet-B7** because it significantly outperforms other CNNs to achieve new state-of-the-art 84.3% top-1 accuracy while being 8.4x smaller and 6.1x faster than GPipe. ([*Source*](https://arxiv.org/pdf/1905.11946.pdf))
 
 ---
 
